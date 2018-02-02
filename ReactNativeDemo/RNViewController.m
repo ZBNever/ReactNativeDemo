@@ -21,10 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"RN界面";
+    [self.navigationController setNavigationBarHidden:YES];
 //    NSURL * jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
-    NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+//    NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+    NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"index.ios" withExtension:@"jsbundle"];
     self.rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                moduleName:@"ReactNativeDemo"
+                                                moduleName:@"ReactNativeDemo"//@"eningSupplier"
                                          initialProperties:nil
                                              launchOptions:nil];
     self.view =self.rootView;
